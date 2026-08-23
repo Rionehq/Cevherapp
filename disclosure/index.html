@@ -20,7 +20,25 @@ p, li { font-size: 15px; color: rgba(250,250,250,0.6); margin-bottom: 16px; }
 ul, ol { padding-left: 20px; margin-bottom: 16px; }
 .meta { font-size: 13px; color: rgba(250,250,250,0.4); margin-bottom: 32px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; }
 .highlight { color: rgba(250,250,250,0.85); font-weight: 600; }
+
+/* Light Mode Stilleri */
+html.light-mode { background-color: #ffffff; }
+body.light-mode { background-color: #ffffff; color: #111827; }
+html.light-mode h2 { color: rgba(17,24,39,0.9); }
+html.light-mode h3 { color: rgba(17,24,39,0.8); }
+html.light-mode p, html.light-mode li { color: rgba(17,24,39,0.6); }
+html.light-mode .meta { color: rgba(17,24,39,0.5); }
+html.light-mode .highlight { color: rgba(17,24,39,0.9); }
     </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const params = new URLSearchParams(window.location.search);
+            if (params.get("theme") === "light") {
+                document.documentElement.classList.add("light-mode");
+                document.body.classList.add("light-mode");
+            }
+        });
+    </script>
 </head>
 <body>
     <h1>Yasal Bilgilendirme ve Risk Bildirimi</h1>
