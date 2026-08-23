@@ -2,103 +2,145 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Cevher - Gizlilik Politikası</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gizlilik Politikası</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html { background-color: #101010; }
-
-        body {
-            background-color: #101010;
-            color: #fafafa;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            line-height: 1.6;
-            padding: 24px;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        ::-webkit-scrollbar { display: none; }
-        body { -ms-overflow-style: none; scrollbar-width: none; }
-
-        h1 { font-size: 24px; font-weight: 700; margin-bottom: 24px; letter-spacing: -0.02em; }
-        h2 { font-size: 18px; font-weight: 600; margin-top: 32px; margin-bottom: 12px; color: rgba(250, 250, 250, 0.9); }
-        p, li { font-size: 15px; color: rgba(250, 250, 250, 0.6); margin-bottom: 16px; }
-        ul { padding-left: 20px; margin-bottom: 16px; }
-        .meta { font-size: 13px; color: rgba(250, 250, 250, 0.4); margin-bottom: 32px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { background-color: oklch(0.145 0 0); }
+body { background-color: oklch(0.145 0 0); color: #fafafa; font-family: 'Plus Jakarta Sans', sans-serif; -webkit-font-smoothing: antialiased; line-height: 1.6; padding: 24px; max-width: 600px; margin: 0 auto; }
+::-webkit-scrollbar { display: none; }
+body { -ms-overflow-style: none; scrollbar-width: none; }
+h1 { font-size: 24px; font-weight: 700; margin-bottom: 24px; letter-spacing: -0.02em; }
+h2 { font-size: 18px; font-weight: 600; margin-top: 32px; margin-bottom: 12px; color: rgba(250,250,250,0.9); }
+h3 { font-size: 15px; font-weight: 600; margin-top: 20px; margin-bottom: 8px; color: rgba(250,250,250,0.8); }
+p, li { font-size: 15px; color: rgba(250,250,250,0.6); margin-bottom: 16px; }
+ul, ol { padding-left: 20px; margin-bottom: 16px; }
+.meta { font-size: 13px; color: rgba(250,250,250,0.4); margin-bottom: 32px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; }
+.highlight { color: rgba(250,250,250,0.85); font-weight: 600; }
     </style>
 </head>
 <body>
-
     <h1>Gizlilik Politikası</h1>
     <div class="meta">Son Güncelleme: 23 Ağustos 2026</div>
-
-    <p>Cevher ("biz", "bize" veya "bizim") olarak, kişisel verilerinizin gizliliğine ve güvenliğine en yüksek düzeyde önem vermekteyiz. Bu Gizlilik Politikası, Cevher uygulamasını ve hizmetlerini (topluca "Hizmet") kullandığınızda kişisel verilerinizin nasıl toplandığını, kullanıldığını, paylaşıldığını ve korunduğunu açıklamaktadır. İşbu politika, 6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") ve ilgili mevzuat uyarınca hazırlanmıştır.</p>
-
-    <h2>1. Veri Sorumlusu</h2>
-    <p>KVKK uyarınca, kişisel verileriniz veri sorumlusu sıfatıyla Cevher tarafından işlenmektedir. Amacımız, size şeffaf bir hizmet sunmak ve verilerinizin güvenliğini sağlamaktır.</p>
-
-    <h2>2. Toplanan Veriler</h2>
-    <p>Hizmetimizi kullandığınızda aşağıdaki veri türlerini toplayabilir ve işleyebiliriz:</p>
+    
+    <h2>1. Giriş ve Kapsam</h2>
+    <p>İşbu Gizlilik Politikası (bundan böyle kısaca <span class="highlight">"Politika"</span> olarak anılacaktır), Cevher tarafından işletilen, mobil cihazlar ve web üzerinden erişilebilen Cevher portföy takip sisteminin kullanımı sırasında elde edilen kişisel verilerin toplanması, kullanılması, işlenmesi, aktarılması, saklanması ve korunmasına ilişkin kural ve koşulları belirlemek amacıyla hazırlanmıştır.</p>
+    <p>Cevher, kullanıcıların sahip oldukları finansal varlıkları, kripto paraları, hisse senetlerini, değerli madenleri ve diğer yatırım araçlarını tek bir arayüz üzerinden izlemelerine olanak tanıyan kapsamlı bir portföy takip aracıdır. Önemle belirtmek isteriz ki; Cevher bir borsa, aracı kurum, yatırım danışmanlığı firması veya finansal hizmet sağlayıcısı değildir. Cevher üzerinden herhangi bir varlık alım satımı yapılamaz, itibari para (fiat) veya kripto para transferi gerçekleştirilemez. Cevher yalnızca bilgi sağlama ve kişisel portföy yönetimi amacıyla tasarlanmış bir yazılımdır.</p>
+    <p>Veri sorumlusu sıfatıyla, 6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") ve ilgili ikincil mevzuat ile uluslararası standartlar çerçevesinde, gizliliğinize büyük önem veriyor, kişisel verilerinizin güvenliğini sağlamak için teknik ve idari tüm tedbirleri alıyoruz. Bu Politika, Cevher'i indiren, erişen veya bir hesap oluşturan tüm gerçek kişileri (kısaca <span class="highlight">"Kullanıcı"</span>) kapsamaktadır.</p>
+    
+    <h2>2. Tanımlar</h2>
+    <p>İşbu Politika metninde geçen aşağıdaki terimler, karşılarında belirtilen anlamları ifade eder:</p>
     <ul>
-        <li><strong>Kimlik ve İletişim Verileri:</strong> Hesap oluşturduğunuzda ad, soyad, e-posta adresi gibi bilgiler.</li>
-        <li><strong>Finansal ve Portföy Verileri:</strong> Sadece kendi girdiğiniz portföy detayları, varlık miktarları, işlem geçmişiniz ve takip ettiğiniz enstrümanlar. Unutmayın, Cevher bir borsa veya aracı kurum değildir; banka hesap bilgileri veya kredi kartı bilgileri toplanmaz.</li>
-        <li><strong>Teknik ve Cihaz Verileri:</strong> IP adresi, cihaz modeli, işletim sistemi, uygulama içi kullanım istatistikleri, hata logları.</li>
+        <li><span class="highlight">Kullanıcı:</span> Uygulama'yı cihazına indiren, kullanan, üyelik oluşturan veya Uygulama hizmetlerinden herhangi bir şekilde faydalanan tüm gerçek kişileri,</li>
+        <li><span class="highlight">Kişisel Veri:</span> Kimliği belirli veya belirlenebilir gerçek kişiye ilişkin, Kullanıcı'yı doğrudan veya dolaylı olarak tanımlayabilecek her türlü bilgiyi (örneğin ad, soyad, e-posta adresi, cihaz IP adresi),</li>
+        <li><span class="highlight">Özel Nitelikli Kişisel Veri:</span> Kişilerin ırkı, etnik kökeni, siyasi düşüncesi, felsefi inancı, dini, mezhebi veya diğer inançları, kılık ve kıyafeti, dernek, vakıf ya da sendika üyeliği, sağlığı, cinsel hayatı, ceza mahkûmiyeti ve güvenlik tedbirleriyle ilgili verileri ile biyometrik ve genetik verileri,</li>
+        <li><span class="highlight">İşleme:</span> Kişisel verilerin tamamen veya kısmen otomatik olan ya da herhangi bir veri kayıt sisteminin parçası olmak kaydıyla otomatik olmayan yollarla elde edilmesi, kaydedilmesi, depolanması, muhafaza edilmesi, değiştirilmesi, yeniden düzenlenmesi, açıklanması, aktarılması, devralınması, elde edilebilir hâle getirilmesi, sınıflandırılması ya da kullanılmasının engellenmesi gibi veriler üzerinde gerçekleştirilen her türlü işlemi,</li>
+        <li><span class="highlight">Veri Sorumlusu:</span> Kişisel verilerin işleme amaçlarını ve vasıtalarını belirleyen, veri kayıt sisteminin kurulmasından ve yönetilmesinden sorumlu olan gerçek veya tüzel kişiyi (Bu Politika kapsamında Cevher'dir),</li>
+        <li><span class="highlight">KVKK:</span> 6698 sayılı Kişisel Verilerin Korunması Kanunu'nu,</li>
+        <li><span class="highlight">Açık Rıza:</span> Belirli bir konuya ilişkin, bilgilendirilmeye dayanan ve özgür iradeyle açıklanan onayı,</li>
+        <li><span class="highlight">Kurul / Kurum:</span> Kişisel Verileri Koruma Kurulu'nu ve Kişisel Verileri Koruma Kurumu'nu ifade eder.</li>
     </ul>
 
-    <h2>3. Kişisel Verilerin İşlenme Amaçları</h2>
-    <p>Topladığımız veriler aşağıdaki amaçlarla işlenmektedir:</p>
+    <h2>3. Topladığımız Veriler</h2>
+    <p>Cevher Uygulaması'nı kullanmanız esnasında, sizlere kesintisiz ve kişiselleştirilmiş bir deneyim sunabilmek amacıyla aşağıdaki veri kategorilerinde kişisel verilerinizi toplamaktayız:</p>
+    
+    <h3>3.1. Kimlik ve Profil Verileri</h3>
+    <p>Hesap oluşturduğunuzda veya profilinizi güncellediğinizde bize doğrudan sağladığınız verilerdir. Adınız, soyadınız, kullanıcı adınız, yaş/doğum tarihi bilginiz ve profil fotoğrafınız bu kapsama girmektedir. Bu veriler, sizi sistemde tekil bir kullanıcı olarak tanımlamak, size özel bir hesap profili oluşturmak ve gerektiğinde hesabınızın size ait olduğunu doğrulamak amacıyla toplanmaktadır.</p>
+    
+    <h3>3.2. İletişim Verileri</h3>
+    <p>Uygulama'ya kayıt olurken veya destek talepleriniz sırasında alınan e-posta adresiniz ve varsa telefon numaranızdır. Bu veriler, hesap güvenliğinizi sağlamak (şifre sıfırlama, iki faktörlü doğrulama), teknik destek taleplerinize yanıt vermek, yasal bildirimleri ve (onay vermeniz halinde) yenilikler, güncellemeler ve kampanyalar hakkında sizi bilgilendirmek amacıyla işlenmektedir.</p>
+
+    <h3>3.3. Finansal ve Portföy Verileri</h3>
+    <p>Uygulama içerisine manuel olarak eklediğiniz veya API aracılığıyla entegre ettiğiniz (salt okunur) finansal varlık bilgileri, sahip olduğunuz kripto varlık miktarları, hisse senedi adetleri, ortalama maliyetleriniz, hedef fiyatlarınız, portföy işlem geçmişiniz ve izleme listeleriniz (watchlists) bu kategoriye girer. Bu veriler, Cevher'in temel işlevi olan portföy takibi, kar/zarar analizi, varlık dağılımı görselleştirmesi ve fiyat alarmlarının çalışabilmesi için zorunlu olarak toplanmaktadır. Hiçbir finansal veriniz, açık rızanız olmaksızın pazarlama amacıyla üçüncü şahıslara satılmaz veya paylaşılmaz.</p>
+
+    <h3>3.4. Teknik ve Cihaz Verileri</h3>
+    <p>Uygulama'yı çalıştırdığınız cihaz hakkında otomatik olarak toplanan verilerdir. Cihazınızın IP adresi, cihaz modeli ve işletim sistemi versiyonu, benzersiz cihaz tanımlayıcıları (UUID, reklam kimlikleri), mobil ağ bilgileri, tarayıcı türü, dil ayarları ve saat dilimi. Bu bilgiler, uygulamanın cihazınızda düzgün çalışmasını sağlamak, dil ve lokasyon bazlı varsayılan ayarları (örneğin para birimi) yapılandırmak, siber saldırıları engellemek ve sistem güvenliğini sağlamak için toplanır.</p>
+
+    <h3>3.5. Kullanım ve Etkileşim Verileri</h3>
+    <p>Uygulama içindeki davranışlarınızı yansıtan log verileridir. Hangi ekranları ziyaret ettiğiniz, hangi özelliklere dokunduğunuz, oturum açma ve kapatma zamanlarınız, arama sorgularınız, hata raporları (crash logs) ve performans metrikleri. Bu veriler, kullanıcı deneyimini iyileştirmek, uygulamadaki hataları tespit edip gidermek (debugging) ve yeni özelliklerin geliştirilmesine yön vermek amacıyla analitik olarak işlenmektedir.</p>
+
+    <h2>4. Verilerin İşlenme Amaçları ve Hukuki Dayanakları</h2>
+    <p>Toplanan kişisel verileriniz, KVKK'nın 5. ve 6. maddelerinde belirtilen kişisel veri işleme şartlarına uygun olarak aşağıdaki amaçlar ve hukuki dayanaklar doğrultusunda işlenmektedir:</p>
+    
     <ul>
-        <li>Hizmetin sağlanması, sürdürülmesi ve iyileştirilmesi,</li>
-        <li>Portföy verilerinizin güvenli bir şekilde saklanması ve cihazlar arası senkronizasyonun sağlanması,</li>
-        <li>Müşteri desteği sunulması ve sorunların giderilmesi,</li>
-        <li>Yasal yükümlülüklerin yerine getirilmesi.</li>
+        <li><span class="highlight">Sözleşmenin Kurulması ve İfası (KVKK md. 5/2-c):</span> Kullanıcı sözleşmesinin kurulması, hesabınızın oluşturulması, portföy izleme hizmetlerinin sunulması, portföy analizlerinizin hesaplanması ve hesabınızın yönetilmesi.</li>
+        <li><span class="highlight">Hukuki Yükümlülüklerin Yerine Getirilmesi (KVKK md. 5/2-ç):</span> Yetkili kamu kurum ve kuruluşlarından gelen geçerli yasal bilgi taleplerinin karşılanması, bilgi güvenliği süreçlerinin yürütülmesi, ticari elektronik ileti izin kayıtlarının tutulması ve ilgili mevzuatlardan doğan veri saklama yükümlülüklerinin ifası.</li>
+        <li><span class="highlight">Meşru Menfaatlerimiz (KVKK md. 5/2-f):</span> Uygulama altyapısının güvenliğinin sağlanması, dolandırıcılık (fraud) ve kötüye kullanımın tespiti/önlenmesi, sistem performansının izlenmesi, hata tespiti (bug tracking) yapılması, kullanıcı deneyiminin ve ürün kalitesinin iyileştirilmesi için anonimleştirilmiş veri analizi süreçlerinin yürütülmesi (Kullanıcının temel hak ve özgürlüklerine zarar vermemek kaydıyla).</li>
+        <li><span class="highlight">Açık Rıza (KVKK md. 5/1):</span> Sadece onay vermeniz halinde, yeni özellikler, güncellemeler ve özel teklifler hakkında e-posta yoluyla veya anlık bildirim (push notification) ile pazarlama iletişimleri yapılması ve bazı analitik çerezlerin/takip teknolojilerinin kullanılması. Açık rızanızı dilediğiniz zaman, hiçbir gerekçe göstermeksizin uygulama ayarları üzerinden veya ileti içindeki ret bağlantısı aracılığıyla geri çekebilirsiniz.</li>
     </ul>
 
-    <h2>4. Verilerin İşlenmesinin Hukuki Sebepleri</h2>
-    <p>Kişisel verileriniz, KVKK'nın 5. ve 6. maddelerinde belirtilen şartlara dayalı olarak işlenmektedir. Bunlar temel olarak; bir sözleşmenin kurulması veya ifasıyla doğrudan doğruya ilgili olması (Hizmet Kullanım Koşulları), veri sorumlusunun hukuki yükümlülüğünü yerine getirebilmesi için zorunlu olması ve ilgili kişinin temel hak ve özgürlüklerine zarar vermemek kaydıyla, veri sorumlusunun meşru menfaatleri için veri işlenmesinin zorunlu olmasıdır.</p>
-
-    <h2>5. Veri Saklama ve Güvenlik</h2>
-    <p>Verileriniz, sektör standartlarında güvenlik protokollerine sahip sunucularda saklanmaktadır. Veri tabanı ve kimlik doğrulama altyapısı olarak Supabase kullanmaktayız. Supabase, verilerinizi yüksek şifreleme standartlarıyla (AES-256) korur. Ancak, internet üzerinden yapılan hiçbir veri iletiminin %100 güvenli olduğu garanti edilemez. Cevher, verilerinizi korumak için makul ve gerekli tüm teknik ve idari tedbirleri almaktadır.</p>
-
-    <h2>6. Üçüncü Taraf Entegrasyonlar ve Veri Paylaşımı</h2>
-    <p>Kişisel verilerinizi asla pazarlama amacıyla üçüncü şahıslara satmıyoruz. Verileriniz yalnızca yasal bir zorunluluk olması halinde yetkili kamu kurum ve kuruluşları ile veya Hizmetin sağlanabilmesi için gerekli teknik altyapıyı sunan iş ortaklarımızla (örneğin Supabase, analiz araçları sağlayıcıları) paylaşılabilir.</p>
-
-    <h2>7. Cookie (Çerez) ve LocalStorage Kullanımı</h2>
-    <p>Hizmetimizin daha iyi çalışabilmesi, kullanıcı oturumlarının yönetilmesi ve tercihlerinizin hatırlanması için tarayıcı/cihaz özelliklerinden yararlanıyoruz. Uygulamamız genel olarak yerel depolama (LocalStorage) kullanarak oturum bilgilerinizi cihazınızda tutar. Analitik amaçlı bazı anonim çerezler de kullanılabilir.</p>
-
-    <h2>8. KVKK Kapsamında Kullanıcı Hakları</h2>
-    <p>KVKK'nın 11. maddesi uyarınca sahip olduğunuz haklar şunlardır:</p>
+    <h2>5. Çerez (Cookie) ve Yerel Depolama (LocalStorage) Politikası</h2>
+    <p>Uygulamamız ve ilgili web tabanlı hizmetlerimiz, kullanıcı deneyimini zenginleştirmek, oturum yönetimini sağlamak ve güvenlik tedbirlerini uygulamak amacıyla Çerezler (Cookies), Yerel Depolama (LocalStorage), Oturum Depolama (SessionStorage) ve benzeri izleme teknolojilerini kullanmaktadır.</p>
+    
     <ul>
-        <li>Kişisel verilerinizin işlenip işlenmediğini öğrenme,</li>
-        <li>Kişisel verileriniz işlenmişse buna ilişkin bilgi talep etme,</li>
+        <li><span class="highlight">Zorunlu Teknolojiler:</span> Uygulamanın temel fonksiyonlarının çalışması için kesinlikle gereklidir. Örneğin, oturum açık kalma durumunuzu (authentication tokens) tutan veya güvenlik duvarı için gerekli olan çerezler/yerel depolama verileridir. Bu teknolojilerin kullanımı için KVKK uyarınca açık rızanız gerekmemektedir (Hizmetin sunulması için elzem olmaları nedeniyle). Kapatılmaları halinde uygulama işlevlerini yerine getiremez.</li>
+        <li><span class="highlight">İşlevsel Teknolojiler:</span> Tercihlerinizi hatırlamak (örneğin seçtiğiniz varsayılan para birimi, karanlık/aydınlık tema seçimi, dil tercihi) amacıyla kullanılır. Bu veriler ağırlıklı olarak cihazınızın Yerel Depolamasında (LocalStorage) tutulur ve tarafımıza aktarılmadan cihazınızda kalır.</li>
+        <li><span class="highlight">Analitik ve Performans Teknolojileri:</span> Kullanıcıların uygulama ile nasıl etkileşime girdiğini anlamak, kilitlenmeleri (crashes) analiz etmek ve genel performansı ölçmek için kullanılır. Bu tür veriler genellikle anonim veya takma adlı (pseudonymous) olarak işlenir. Uygulama içerisindeki "Gizlilik Ayarları" bölümünden bu kategorideki izlemeleri dilediğiniz zaman kapatabilirsiniz.</li>
+    </ul>
+
+    <h2>6. Üçüncü Taraf Hizmet Sağlayıcılar</h2>
+    <p>Cevher, sizlere yüksek standartlarda bir hizmet sunabilmek için kendi alanında lider, güvenilir üçüncü taraf teknoloji altyapı sağlayıcıları ile çalışmaktadır. Bu iş ortaklarımız, verilerinizi yalnızca bizim talimatlarımız doğrultusunda ve bu Gizlilik Politikası'na katı bir şekilde bağlı kalarak işlerler.</p>
+    
+    <ul>
+        <li><span class="highlight">Supabase (Veri Tabanı ve Kimlik Doğrulama):</span> Kullanıcı kimlik doğrulama süreçleri (authentication), kullanıcı hesap bilgileri ve şifrelenmiş portföy verilerinizin güvenli bir şekilde barındırılması işlemleri için arka uç (backend) hizmet sağlayıcımız Supabase'dir. Supabase, endüstri standardı güvenlik sertifikalarına (SOC2, ISO 27001 vb.) sahip bir platformdur.</li>
+        <li><span class="highlight">Fiyat Veri Sağlayıcıları:</span> Kripto para, hisse senedi, emtia ve döviz kurlarının gerçek zamanlı ve geçmiş verilerini sağlamak amacıyla CoinGecko, TradingView, Yahoo Finance vb. API'lar kullanılabilir. Bu sağlayıcılara, sizin finansal portföy büyüklüğünüz veya kimliğiniz iletilmez; sadece "X varlığının güncel fiyatı nedir?" şeklinde genel anonim sorgular gönderilir.</li>
+        <li><span class="highlight">Analitik ve Hata İzleme:</span> Hataları tespit etmek ve kullanım istatistiklerini oluşturmak için (örneğin Sentry, Google Analytics for Firebase) araçlar kullanılabilir. Bu platformlara aktarılan veriler doğrudan kimliğinizi ifşa edecek veriler içermez, IP maskeleme ve cihaz kimliği anonimleştirme yöntemleri uygulanır.</li>
+    </ul>
+
+    <h2>7. Verilerin Yurt Dışına Aktarımı</h2>
+    <p>Kullandığımız bulut tabanlı altyapı sistemleri (özellikle Supabase ve diğer global servis sağlayıcılarımız) nedeniyle, kişisel verileriniz yurt dışında yerleşik sunucularda (çoğunlukla Avrupa Birliği - Frankfurt/İrlanda veya Amerika Birleşik Devletleri lokasyonlarında) barındırılabilir ve işlenebilir.</p>
+    <p>KVKK'nın 9. maddesi gereğince kişisel verilerin yurt dışına aktarımı kural olarak açık rıza veya Kurul tarafından belirlenen yeterli korumaya sahip ülkeler şartına tabidir. Sunucularımızın yurt dışında bulunması teknik bir zorunluluk (hizmetin doğası) olduğundan, Uygulama'yı kullanmaya başlamanız ve hesap oluşturmanız, verilerinizin güvenli sunucularda barındırılmak üzere yurt dışına aktarımına Açık Rıza verdiğiniz anlamına gelmektedir. Veri aktarımını gerçekleştirdiğimiz üçüncü taraf hizmet sağlayıcılarının tamamı, uluslararası veri koruma standartlarına (GDPR uyumluluğu vb.) ve katı şifreleme protokollerine sahip kuruluşlardır.</p>
+
+    <h2>8. Veri Saklama Süreleri</h2>
+    <p>Kişisel verileriniz, işlenme amaçlarının gerektirdiği süre boyunca veya ilgili mevzuatta öngörülen kanuni saklama süreleri sonuna kadar muhafaza edilir.</p>
+    <ul>
+        <li><span class="highlight">Hesap Verileri ve Portföy Bilgileri:</span> Hesabınız aktif olduğu sürece saklanır. Hesabınızı silme talebinde bulunduğunuzda, aktif veri tabanımızdan derhal veya en geç 30 gün içinde geri döndürülemez şekilde silinir.</li>
+        <li><span class="highlight">Log ve Trafik Verileri:</span> 5651 sayılı İnternet Ortamında Yapılan Yayınların Düzenlenmesi ve Bu Yayınlar Yoluyla İşlenen Suçlarla Mücadele Edilmesi Hakkında Kanun ve ilgili mevzuat uyarınca, işlem güvenliği ve erişim kayıtları yasal bir zorunluluk olarak asgari 2 yıl süreyle güvenli bir şekilde saklanır.</li>
+        <li><span class="highlight">Yedekleme (Backup) Verileri:</span> Sistem yedeklerindeki verileriniz, felaket kurtarma senaryoları kapsamında 90 gün boyunca şifrelenmiş olarak tutulur ve bu sürenin sonunda otomatik olarak üzerine yazılarak yok edilir.</li>
+    </ul>
+    <p>Sürenin bitimi veya işleme amacının ortadan kalkması halinde kişisel verileriniz, Cevher'in Kişisel Veri Saklama ve İmha Politikası doğrultusunda silinir, yok edilir veya anonim hale getirilir.</p>
+
+    <h2>9. Veri Güvenliği ve İhlal Bildirimi</h2>
+    <p>Cevher olarak, sistemlerimizde barındırılan verilerinizin bütünlüğünü, gizliliğini ve erişilebilirliğini korumak en yüksek önceliğimizdir.</p>
+    <ul>
+        <li><span class="highlight">Şifreleme (Encryption):</span> Sunucularımız ve cihazınız arasındaki tüm veri trafiği aktarım sırasında (in transit) Transport Layer Security (TLS 1.3) protokolleri ile şifrelenmektedir. Veri tabanında durağan halde (at rest) bulunan hassas verileriniz (özellikle portföy miktarlarınız ve kimlik doğrulama token'ları) AES-256 bit şifreleme algoritması ile korunmaktadır.</li>
+        <li><span class="highlight">Erişim Kontrolleri:</span> Sistemlere ve veri tabanlarına erişim, "en az yetki prensibi" (principle of least privilege) doğrultusunda sadece yetkili teknik personel ile sınırlandırılmıştır ve tüm erişimler loglanmaktadır.</li>
+        <li><span class="highlight">Veri İhlali Bildirimi:</span> Alınan tüm idari ve teknik tedbirlere rağmen, öngörülemeyen bir siber saldırı veya güvenlik açığı sebebiyle kişisel verilerinizin kanuni olmayan yollarla başkaları tarafından elde edilmesi halinde, bu durum KVKK gereği en geç 72 saat içerisinde Kişisel Verileri Koruma Kurulu'na ve sizlere (varsa kayıtlı e-posta adresiniz üzerinden veya uygulama içi bildirim ile) şeffaf bir şekilde derhal bildirilecektir.</li>
+    </ul>
+
+    <h2>10. KVKK Kapsamında Kullanıcı Hakları</h2>
+    <p>KVKK'nın 11. maddesi uyarınca, Veri Sorumlusu sıfatıyla tarafımıza başvurarak kişisel verileriniz üzerinde aşağıdaki hakları kullanabilirsiniz:</p>
+    <ol>
+        <li>Kişisel veri işlenip işlenmediğini öğrenme,</li>
+        <li>Kişisel verileri işlenmişse buna ilişkin bilgi talep etme,</li>
         <li>Kişisel verilerin işlenme amacını ve bunların amacına uygun kullanılıp kullanılmadığını öğrenme,</li>
         <li>Yurt içinde veya yurt dışında kişisel verilerin aktarıldığı üçüncü kişileri bilme,</li>
         <li>Kişisel verilerin eksik veya yanlış işlenmiş olması hâlinde bunların düzeltilmesini isteme,</li>
-        <li>KVKK 7. maddesinde öngörülen şartlar çerçevesinde kişisel verilerin silinmesini veya yok edilmesini isteme,</li>
-        <li>İşlenen verilerin münhasıran otomatik sistemler vasıtasıyla analiz edilmesi suretiyle aleyhinize bir sonucun ortaya çıkmasına itiraz etme.</li>
+        <li>KVKK 7. maddede öngörülen şartlar çerçevesinde kişisel verilerin silinmesini veya yok edilmesini isteme,</li>
+        <li>Düzeltme, silme veya yok etme işlemlerinin, kişisel verilerin aktarıldığı üçüncü kişilere bildirilmesini isteme,</li>
+        <li>İşlenen verilerin münhasıran otomatik sistemler vasıtasıyla analiz edilmesi suretiyle kişinin kendisi aleyhine bir sonucun ortaya çıkmasına itiraz etme,</li>
+        <li>Kişisel verilerin kanuna aykırı olarak işlenmesi sebebiyle zarara uğraması hâlinde zararın giderilmesini talep etme.</li>
+    </ol>
+    <p>Bu haklarınızı kullanmak için, kimliğinizi tespit edici belgeler ile birlikte taleplerinizi Bölüm 13'te yer alan iletişim kanalları üzerinden bize iletebilirsiniz. Talebiniz niteliğine göre en kısa sürede ve en geç 30 (otuz) gün içinde ücretsiz olarak sonuçlandırılacaktır.</p>
+
+    <h2>11. Çocukların Gizliliği</h2>
+    <p>Cevher Uygulaması, finansal varlıkların takibi gibi konular içerdiği için genel itibarıyla yetişkin kullanıcılara (18 yaş ve üzeri) hitap etmektedir. Uygulamamız 18 yaşın altındaki bireylerden bilerek ve kasıtlı olarak kişisel veri toplamaz. Bir ebeveyn veya yasal vasi olarak, vesayetiniz altındaki bir çocuğun bize onaysız olarak kişisel veri sağladığını fark ederseniz, lütfen bizimle derhal iletişime geçin. Durumun tespiti halinde söz konusu veriler ve hesap sistemlerimizden derhal silinecektir.</p>
+
+    <h2>12. Politika Değişiklikleri</h2>
+    <p>Cevher, yasal mevzuattaki değişiklikler, uygulamaya eklenen yeni özellikler, teknolojik gelişmeler veya şirket politikalarımızdaki güncellemeler doğrultusunda bu Gizlilik Politikası'nı önceden haber vermeksizin tek taraflı olarak değiştirme, güncelleme veya yenileme hakkını saklı tutar.</p>
+    <p>Bununla birlikte, kullanıcı haklarınızı doğrudan etkileyecek maddi (esaslı) değişiklikler yapılması durumunda, yeni politika yürürlüğe girmeden en az 30 gün önce uygulama içi bildirim (pop-up, banner) veya kayıtlı e-posta adresiniz vasıtasıyla sizi bilgilendireceğiz. Bildirim tarihinden sonra Uygulama'yı kullanmaya devam etmeniz, güncellenmiş Gizlilik Politikası hükümlerini kabul ettiğiniz anlamına gelecektir. Politikanın güncel versiyonuna ve son güncelleme tarihine Uygulama'nın "Ayarlar > Gizlilik" sekmesinden veya web sitemiz üzerinden her zaman ulaşabilirsiniz.</p>
+
+    <h2>13. İletişim ve Başvuru</h2>
+    <p>İşbu Gizlilik Politikası ile ilgili her türlü sorunuz, görüşünüz, kişisel veri haklarınıza ilişkin talebiniz veya güvenlik ihlali şüpheleriniz için Veri Sorumlusu olarak bizimle aşağıdaki kanallar üzerinden 7/24 iletişime geçebilirsiniz:</p>
+    <ul>
+        <li><span class="highlight">E-posta:</span> <a href="mailto:help@cevher.app" style="color: #fafafa; text-decoration: underline;">help@cevher.app</a></li>
+        <li><span class="highlight">Veri Sorumlusu:</span> Cevher</li>
     </ul>
-
-    <h2>9. Çocukların Gizliliği</h2>
-    <p>Hizmetimiz, 18 yaşın altındaki bireylere yönelik değildir. 18 yaşından küçüklerin verilerini bilerek toplamıyoruz. Eğer 18 yaşın altındaki bir çocuğun bize kişisel veri sağladığını fark edersek, bu bilgileri sistemlerimizden derhal sileriz.</p>
-
-    <h2>10. Politika Değişiklikleri</h2>
-    <p>Bu Gizlilik Politikasını zaman zaman güncelleyebiliriz. Önemli değişiklikler yapmamız halinde, uygulamamız üzerinden size bildirimde bulunacağız.</p>
-
-    <h2>11. İletişim</h2>
-    <p>Gizlilik politikamız veya kişisel verileriniz ile ilgili soru, talep ve şikayetleriniz için bizimle <strong>help@cevher.app</strong> adresi üzerinden iletişime geçebilirsiniz.</p>
+    <p>Başvurularınızda; adınız, soyadınız, imzanız (yazılı başvuru ise), T.C. Kimlik numaranız (yabancılar için uyruğu, pasaport numarası veya varsa kimlik numarası), tebligata esas yerleşim yeri veya iş yeri adresiniz, bildirime esas elektronik posta adresiniz, telefon numaranız ve talep konunuzun bulunması KVKK tebliğleri gereği zorunludur.</p>
 
     <div style="height: 64px;"></div>
-
 </body>
 </html>
