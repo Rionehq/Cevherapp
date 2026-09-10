@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Cevher — Gizlilik Politikası / Privacy Policy / Datenschutzerklärung</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    :root{
+      --bg:oklch(1 0 0);--fg:oklch(0.145 0 0);--card:oklch(1 0 0);
+      --muted:oklch(0.97 0 0);--muted-fg:oklch(0.556 0 0);
+      --border:oklch(0.922 0 0);--primary:oklch(0.205 0 0);--primary-fg:oklch(0.985 0 0);
+      --radius:.625rem;color-scheme:light;
+    }
+    /* System dark — used when no ?theme= param */
+    @media(prefers-color-scheme:dark){
+      :root:not([data-theme]){
+        --bg:oklch(0.145 0 0);--fg:oklch(0.985 0 0);--card:oklch(0.205 0 0);
+        --muted:oklch(0.269 0 0);--muted-fg:oklch(0.708 0 0);
+        --border:oklch(1 0 0/10%);--primary:oklch(0.922 0 0);--primary-fg:oklch(0.205 0 0);
+        color-scheme:dark;
+      }
+    }
+    /* Explicit dark — set via ?theme=dark from the app */
+    [data-theme="dark"]{
+      --bg:oklch(0.145 0 0);--fg:oklch(0.985 0 0);--card:oklch(0.205 0 0);
+      --muted:oklch(0.269 0 0);--muted-fg:oklch(0.708 0 0);
+      --border:oklch(1 0 0/10%);--primary:oklch(0.922 0 0);--primary-fg:oklch(0.205 0 0);
+      color-scheme:dark;
+    }
+    /* Explicit light — set via ?theme=light from the app */
+    [data-theme="light"]{
+      --bg:oklch(1 0 0);--fg:oklch(0.145 0 0);--card:oklch(1 0 0);
+      --muted:oklch(0.97 0 0);--muted-fg:oklch(0.556 0 0);
+      --border:oklch(0.922 0 0);--primary:oklch(0.205 0 0);--primary-fg:oklch(0.985 0 0);
+      color-scheme:light;
+    }
+    /* Hide scrollbar — keep native touch scroll intact */
+    *{scrollbar-width:none;-ms-overflow-style:none}
+    *::-webkit-scrollbar{display:none}
+
+    *,*::before,*::after{box-sizing:border-box}
+    body{margin:0;padding:48px 20px 80px;background:var(--bg);color:var(--fg);font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:clip}
+    main{max-width:720px;margin:0 auto}
+    .lang-bar{display:flex;gap:8px;margin-bottom:40px;flex-wrap:wrap}
+    .lang-btn{padding:8px 18px;border-radius:999px;border:1px solid var(--border);background:transparent;color:var(--muted-fg);font-family:inherit;font-size:.875rem;font-weight:600;cursor:pointer;transition:background .15s,color .15s,border-color .15s}
+    .lang-btn.active{background:var(--primary);color:var(--primary-fg);border-color:var(--primary)}
+    .lang-section{display:none}.lang-section.active{display:block}
+    .wordmark{display:block;font-size:.95rem;font-weight:800;letter-spacing:-.03em;color:var(--fg);margin-bottom:10px}
+    h1{font-size:clamp(1.9rem,6vw,3rem);font-weight:800;letter-spacing:-.04em;margin:0 0 6px;line-height:1.05;color:var(--fg)}
+    .updated{font-size:.78rem;color:var(--muted-fg);margin-bottom:48px;opacity:.7;display:block}
+    h2{font-size:1.05rem;font-weight:700;color:var(--fg);margin:40px 0 10px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+    p,li{color:var(--muted-fg);font-size:1rem;line-height:1.72;margin:0 0 12px}
+    ul{padding-left:1.4em;margin:8px 0 16px}li{margin-bottom:6px}
+    strong{color:var(--fg);font-weight:700}a{color:var(--fg);text-underline-offset:3px}
+    .badge{display:inline-block;padding:3px 10px;border-radius:999px;background:var(--muted);border:1px solid var(--border);font-size:.75rem;color:var(--muted-fg);font-weight:500;margin-right:6px;margin-bottom:6px}
+    .badge-row{margin-bottom:16px}
+    footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--border);font-size:.78rem;color:var(--muted-fg);opacity:.75}
+    footer a{color:var(--muted-fg)}
+  </style>
+</head>
+<body>
+<main>
+  <div class="lang-bar">
+    <button class="lang-btn active" onclick="setLang('tr')">Türkçe</button>
+    <button class="lang-btn" onclick="setLang('en')">English</button>
+    <button class="lang-btn" onclick="setLang('de')">Deutsch</button>
+  </div>
+
+  <!-- ══════════════ TÜRKÇE ══════════════ -->
+  <section class="lang-section active" id="lang-tr">
+    <span class="wordmark">Cevher</span>
+    <h1>Gizlilik Politikası</h1>
+    <span class="updated">Son güncelleme: 10 Eylül 2026</span>
+    <p>Cevher, hisse senedi, döviz, altın, kripto para ve emtia gibi finansal enstrümanları kişisel portföyünüzde takip etmenizi sağlayan bir <strong>portföy takip uygulamasıdır</strong>. Uygulama içinde para tutulmaz, para işlemi gerçekleştirilmez ve yatırım tavsiyesi verilmez.</p>
+
+    <h2>1. Topladığımız Veriler</h2>
+    <p>Cevher yalnızca uygulamanın çalışması için zorunlu olan verileri toplar.</p>
+
+    <p><strong>Hesap Verileri</strong></p>
+    <div class="badge-row">
+      <span class="badge">E-posta adresi</span>
+      <span class="badge">Google kimliği (Google Sign-In kullanıldığında)</span>
+    </div>
+    <p>Hesap oluşturmak ve portföyü cihazlar arasında senkronize etmek için kullanılır.</p>
+
+    <p><strong>Portföy ve İşlem Verileri</strong></p>
+    <div class="badge-row">
+      <span class="badge">İşlem kayıtları (al/sat, miktar, fiyat, tarih)</span>
+      <span class="badge">Favori enstrümanlar</span>
+      <span class="badge">Fiyat alarmları (hedef fiyat, enstrüman)</span>
+      <span class="badge">Varlık hedefleri</span>
+    </div>
+    <p>Bu veriler yalnızca size aittir; başka kullanıcılar veya üçüncü taraflarla paylaşılmaz.</p>
+
+    <p><strong>Uygulama Tercihleri</strong></p>
+    <div class="badge-row">
+      <span class="badge">Görüntüleme para birimi</span>
+      <span class="badge">Tema (açık / koyu)</span>
+      <span class="badge">Grafik türü</span>
+      <span class="badge">Pazar bölgesi (TR / Küresel / ABD / DE / GB)</span>
+      <span class="badge">Dil tercihi</span>
+    </div>
+    <p>Cihazınızda yerel olarak saklanır; giriş yapıldığında sunucuyla da eşitlenir.</p>
+
+    <p><strong>Push Bildirimi Token'ı</strong></p>
+    <div class="badge-row">
+      <span class="badge">iOS / Android push bildirimi cihaz token'ı</span>
+    </div>
+    <p>Fiyat alarmlarını iletebilmek için sunucuda saklanır. Hesap kapatıldığında veya bildirimler devre dışı bırakıldığında silinir.</p>
+
+    <p><strong>Hata ve Çökme Verileri</strong></p>
+    <div class="badge-row">
+      <span class="badge">Anonim hata izleri ve çökme raporları (Sentry)</span>
+      <span class="badge">Uygulama sürümü ve platform bilgisi</span>
+    </div>
+    <p>Yalnızca teknik hata ayıklama amacıyla kullanılır; portföy içeriğinizi içermez.</p>
+
+    <h2>2. Toplamadığımız Veriler</h2>
+    <ul>
+      <li>Uygulama içinde <strong>para tutulmaz</strong>; herhangi bir mali varlık saklanmaz veya yönetilmez.</li>
+      <li>Banka hesabı, kredi kartı veya ödeme bilgisi alınmaz.</li>
+      <li>Konum verisi toplanmaz.</li>
+      <li>Kullanıcı davranışları reklam amacıyla profilenmez.</li>
+      <li>Biyometrik veriler (Face ID / Touch ID) yalnızca işletim sisteminiz tarafından yönetilir; Cevher bu verilere erişmez veya saklamaz.</li>
+    </ul>
+
+    <h2>3. Verilerinizin Saklandığı Yer</h2>
+    <p>Portföy ve hesap verileri <strong>Supabase</strong> (PostgreSQL) altyapısında saklanır. Supabase, SOC 2 Type II sertifikalı bir hizmet sağlayıcısıdır. Sunucu konumu: <strong>AB Bölgesi (Frankfurt, Almanya)</strong>.</p>
+
+    <h2>4. Üçüncü Taraf Hizmetler</h2>
+    <ul>
+      <li><strong>Supabase</strong> — Kimlik doğrulama ve veritabanı altyapısı.</li>
+      <li><strong>Google Sign-In</strong> — İsteğe bağlı OAuth girişi; yalnızca e-posta ve kullanıcı kimliği aktarılır.</li>
+      <li><strong>Sentry</strong> — Anonim hata izleme ve çökme raporlaması.</li>
+      <li><strong>Finansal veri sağlayıcıları (Alpaca ve benzeri)</strong> — Piyasa fiyat verileri sunucu tarafında normalleştirilip uygulamaya aktarılır; kimliğiniz bu sağlayıcılara iletilmez.</li>
+    </ul>
+
+    <h2>5. Güvenlik</h2>
+    <ul>
+      <li>Tüm trafik TLS/HTTPS ile şifrelenir.</li>
+      <li>Veritabanında Satır Düzeyi Güvenlik (RLS) uygulanır; her kullanıcı yalnızca kendi verilerine erişebilir.</li>
+      <li>Uygulama kilidi (Face ID / Touch ID / PIN) ve arka plana geçişte otomatik ekran örtme ek güvenlik katmanı sağlar.</li>
+    </ul>
+
+    <h2>6. Veri Saklama Süresi</h2>
+    <p>Verileriniz hesabınız aktif olduğu sürece saklanır. Hesabı sildiğinizde portföy, işlem, alarm ve bildirim token'ı verileriniz kalıcı olarak silinir. Yasal zorunluluk hâlinde ilgili kayıtlar yalnızca zorunlu süre kadar tutulur.</p>
+
+    <h2>7. Haklarınız</h2>
+    <p>Uygulama içi Ayarlar menüsünden verilerinizi yönetebilir ve hesabınızı silebilirsiniz. Sorularınız için: <a href="mailto:privacy@cevher.app">privacy@cevher.app</a></p>
+
+    <h2>8. Değişiklikler</h2>
+    <p>Politika güncellendiğinde bu sayfada yayımlanır ve "Son güncelleme" tarihi değiştirilir.</p>
+    <footer><p>© 2026 Cevher. Tüm hakları saklıdır. &nbsp;·&nbsp; <a href="terms.html">Kullanım Koşulları</a> &nbsp;·&nbsp; <a href="disclosure.html">Yasal Açıklamalar</a></p></footer>
+  </section>
+
+  <!-- ══════════════ ENGLISH ══════════════ -->
+  <section class="lang-section" id="lang-en">
+    <span class="wordmark">Cevher</span>
+    <h1>Privacy Policy</h1>
+    <span class="updated">Last updated: September 10, 2026</span>
+    <p>Cevher is a <strong>personal portfolio tracking application</strong> for monitoring stocks, currencies, gold, crypto assets, and commodities. <strong>No money is held, transferred, or managed</strong> within the app, and no investment advice is given.</p>
+
+    <h2>1. Data We Collect</h2>
+    <p>Cevher collects only the data necessary to operate the app.</p>
+
+    <p><strong>Account Data</strong></p>
+    <div class="badge-row">
+      <span class="badge">Email address</span>
+      <span class="badge">Google account identifier (when using Google Sign-In)</span>
+    </div>
+    <p>Used to create your account and sync your portfolio across devices.</p>
+
+    <p><strong>Portfolio and Transaction Data</strong></p>
+    <div class="badge-row">
+      <span class="badge">Transaction records (buy/sell, quantity, price, date)</span>
+      <span class="badge">Favourite instruments</span>
+      <span class="badge">Price alerts (target price, instrument)</span>
+      <span class="badge">Asset goals</span>
+    </div>
+    <p>This data belongs exclusively to you. It is never shared with other users or third parties.</p>
+
+    <p><strong>App Preferences</strong></p>
+    <div class="badge-row">
+      <span class="badge">Display currency</span>
+      <span class="badge">Theme (light / dark)</span>
+      <span class="badge">Chart type</span>
+      <span class="badge">Market region (TR / Global / US / DE / GB)</span>
+      <span class="badge">Language</span>
+    </div>
+    <p>Stored locally on your device and synced to the server when signed in.</p>
+
+    <p><strong>Push Notification Token</strong></p>
+    <div class="badge-row">
+      <span class="badge">iOS / Android push notification device token</span>
+    </div>
+    <p>Stored on the server to deliver price alerts. Deleted when you close your account or disable notifications.</p>
+
+    <p><strong>Crash and Error Telemetry</strong></p>
+    <div class="badge-row">
+      <span class="badge">Anonymous error traces and crash reports (Sentry)</span>
+      <span class="badge">App version and platform information</span>
+    </div>
+    <p>Used solely for debugging. No portfolio content is included.</p>
+
+    <h2>2. Data We Do Not Collect</h2>
+    <ul>
+      <li><strong>No money is held</strong> — no financial assets are stored or managed.</li>
+      <li>No bank account, credit card, or payment information is collected.</li>
+      <li>No location data is collected.</li>
+      <li>Your behaviour is not profiled for advertising purposes.</li>
+      <li>Biometric data (Face ID / Touch ID) is managed entirely by your operating system; Cevher never accesses or stores it.</li>
+    </ul>
+
+    <h2>3. Where Your Data Is Stored</h2>
+    <p>Data is stored on <strong>Supabase</strong> (PostgreSQL, SOC 2 Type II certified). Server location: <strong>EU region (Frankfurt, Germany)</strong>.</p>
+
+    <h2>4. Third-Party Services</h2>
+    <ul>
+      <li><strong>Supabase</strong> — Authentication and database infrastructure.</li>
+      <li><strong>Google Sign-In</strong> — Optional OAuth login; only your email and user ID are transferred.</li>
+      <li><strong>Sentry</strong> — Anonymous crash reporting and error tracking.</li>
+      <li><strong>Market data providers (Alpaca and similar)</strong> — Prices are fetched and normalised server-side; your identity is never passed to these providers.</li>
+    </ul>
+
+    <h2>5. How Your Data Is Protected</h2>
+    <ul>
+      <li>All traffic is encrypted via TLS/HTTPS.</li>
+      <li>Row-Level Security (RLS) is enforced — each user can only access their own data.</li>
+      <li>Biometric app lock (Face ID / Touch ID / PIN) and automatic screen blurring when the app enters the background.</li>
+    </ul>
+
+    <h2>6. Retention</h2>
+    <p>Data is retained while your account is active. Upon deletion, your portfolio, transaction, alert, and notification token data are permanently removed. Legally required records are retained only for the mandated period.</p>
+
+    <h2>7. Your Rights</h2>
+    <p>Manage or delete your data from the in-app Settings menu. Questions: <a href="mailto:privacy@cevher.app">privacy@cevher.app</a></p>
+
+    <h2>8. Changes</h2>
+    <p>Updates are published on this page with a revised "Last updated" date.</p>
+    <footer><p>© 2026 Cevher. All rights reserved. &nbsp;·&nbsp; <a href="terms.html">Terms of Service</a> &nbsp;·&nbsp; <a href="disclosure.html">Legal Disclosures</a></p></footer>
+  </section>
+
+  <!-- ══════════════ DEUTSCH ══════════════ -->
+  <section class="lang-section" id="lang-de">
+    <span class="wordmark">Cevher</span>
+    <h1>Datenschutzerklärung</h1>
+    <span class="updated">Letzte Aktualisierung: 10. September 2026</span>
+    <p>Cevher ist eine <strong>persönliche Portfolio-Tracking-App</strong> zur Verfolgung von Aktien, Devisen, Gold, Kryptowährungen und Rohstoffen. <strong>In der App werden keine Gelder verwahrt, übertragen oder verwaltet</strong> und es werden keine Anlageempfehlungen gegeben.</p>
+
+    <h2>1. Erhobene Daten</h2>
+    <p>Cevher erhebt ausschließlich die für den App-Betrieb erforderlichen Daten.</p>
+
+    <p><strong>Kontodaten</strong></p>
+    <div class="badge-row">
+      <span class="badge">E-Mail-Adresse</span>
+      <span class="badge">Google-Konto-Kennung (bei Google Sign-In)</span>
+    </div>
+    <p>Zur Kontoerstellung und geräteübergreifenden Portfolio-Synchronisierung.</p>
+
+    <p><strong>Portfolio- und Transaktionsdaten</strong></p>
+    <div class="badge-row">
+      <span class="badge">Transaktionsdatensätze (Kauf/Verkauf, Menge, Preis, Datum)</span>
+      <span class="badge">Favoriteninstrumente</span>
+      <span class="badge">Preisalarme (Zielpreis, Instrument)</span>
+      <span class="badge">Anlageziele</span>
+    </div>
+    <p>Diese Daten gehören ausschließlich Ihnen und werden nie geteilt.</p>
+
+    <p><strong>App-Einstellungen</strong></p>
+    <div class="badge-row">
+      <span class="badge">Anzeigewährung</span>
+      <span class="badge">Design (Hell / Dunkel)</span>
+      <span class="badge">Diagrammtyp</span>
+      <span class="badge">Marktregion (TR / Global / US / DE / GB)</span>
+      <span class="badge">Spracheinstellung</span>
+    </div>
+    <p>Lokal gespeichert und bei Anmeldung mit dem Server synchronisiert.</p>
+
+    <p><strong>Push-Benachrichtigungs-Token</strong></p>
+    <div class="badge-row">
+      <span class="badge">iOS / Android Push-Benachrichtigungs-Gerätetoken</span>
+    </div>
+    <p>Zur Zustellung von Preisalarmen auf dem Server gespeichert. Bei Kontoschließung oder Deaktivierung gelöscht.</p>
+
+    <p><strong>Absturz- und Fehlertelemetrie</strong></p>
+    <div class="badge-row">
+      <span class="badge">Anonyme Fehlerprotokolle und Absturzberichte (Sentry)</span>
+      <span class="badge">App-Version und Plattforminformationen</span>
+    </div>
+    <p>Ausschließlich für technische Fehlerbehebung — keine Portfolio-Inhalte.</p>
+
+    <h2>2. Nicht erhobene Daten</h2>
+    <ul>
+      <li><strong>Keine Geldverwahrung</strong> — keine Vermögenswerte gespeichert oder verwaltet.</li>
+      <li>Keine Bankkontonummern, Kreditkarten- oder Zahlungsdaten.</li>
+      <li>Keine Standortdaten.</li>
+      <li>Kein Nutzerprofiling für Werbezwecke.</li>
+      <li>Biometrische Daten werden ausschließlich vom Betriebssystem verwaltet; Cevher hat keinen Zugriff.</li>
+    </ul>
+
+    <h2>3. Datenspeicherung</h2>
+    <p>Daten werden auf <strong>Supabase</strong> (PostgreSQL, SOC 2 Typ II zertifiziert) gespeichert. Serverstandort: <strong>EU-Region (Frankfurt, Deutschland)</strong>.</p>
+
+    <h2>4. Drittanbieter-Dienste</h2>
+    <ul>
+      <li><strong>Supabase</strong> — Authentifizierungs- und Datenbankinfrastruktur.</li>
+      <li><strong>Google Sign-In</strong> — Optionale OAuth-Anmeldung; nur E-Mail und Nutzer-ID.</li>
+      <li><strong>Sentry</strong> — Anonyme Absturz- und Fehlerberichte.</li>
+      <li><strong>Marktdatenanbieter (Alpaca u.ä.)</strong> — Serverseitig normiert; Ihre Identität wird nicht weitergegeben.</li>
+    </ul>
+
+    <h2>5. Datenschutzmaßnahmen</h2>
+    <ul>
+      <li>Gesamter Datenverkehr über TLS/HTTPS verschlüsselt.</li>
+      <li>Row-Level Security (RLS) — jeder Nutzer sieht nur seine eigenen Daten.</li>
+      <li>Biometrische App-Sperre und automatische Bildschirmabdeckung im Hintergrund.</li>
+    </ul>
+
+    <h2>6. Speicherdauer</h2>
+    <p>Daten werden solange gespeichert, wie Ihr Konto aktiv ist. Bei Löschung werden alle persönlichen Daten dauerhaft entfernt. Gesetzlich vorgeschriebene Aufzeichnungen nur für die erforderliche Dauer.</p>
+
+    <h2>7. Ihre Rechte</h2>
+    <p>Datenverwaltung und -löschung über das In-App-Einstellungsmenü. Fragen: <a href="mailto:privacy@cevher.app">privacy@cevher.app</a></p>
+
+    <h2>8. Änderungen</h2>
+    <p>Aktualisierungen werden auf dieser Seite veröffentlicht und das Datum angepasst.</p>
+    <footer><p>© 2026 Cevher. Alle Rechte vorbehalten. &nbsp;·&nbsp; <a href="terms.html">Nutzungsbedingungen</a> &nbsp;·&nbsp; <a href="disclosure.html">Rechtliche Hinweise</a></p></footer>
+  </section>
+</main>
+<script>
+  (function(){
+    var params=new URLSearchParams(location.search);
+    // ── Theme ─────────────────────────────────────────────────
+    var t=params.get('theme');
+    if(t==='dark'||t==='light') document.documentElement.setAttribute('data-theme',t);
+    // ── Language ──────────────────────────────────────────────
+    var supported=['tr','en','de'];
+    var raw=params.get('lang')||navigator.language||'tr';
+    var lang=raw.slice(0,2).toLowerCase();
+    if(!supported.includes(lang)) lang='tr';
+    function setLang(l){
+      document.querySelectorAll('.lang-section').forEach(function(s){s.classList.remove('active')});
+      document.querySelectorAll('.lang-btn').forEach(function(b){b.classList.remove('active')});
+      document.getElementById('lang-'+l).classList.add('active');
+      document.querySelector('[onclick="setLang(\''+l+'\')"]').classList.add('active');
+      document.documentElement.lang=l;
+    }
+    setLang(lang);
+    window.setLang=setLang;
+  })();
+</script>
+</body>
+</html>
