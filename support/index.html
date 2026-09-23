@@ -10,22 +10,31 @@
   <style>
     :root{
       --bg:oklch(1 0 0);--fg:oklch(0.145 0 0);--card:oklch(1 0 0);
-      --muted:oklch(0.97 0 0);--muted-fg:oklch(0.5 0 0);
-      --border:oklch(0.922 0 0);--primary:oklch(0.145 0 0);--primary-fg:oklch(0.985 0 0);
+      --muted:oklch(0.97 0 0);--muted-fg:oklch(0.556 0 0);
+      --border:oklch(0.922 0 0);--primary:oklch(0.205 0 0);--primary-fg:oklch(0.985 0 0);
       --radius:.625rem;color-scheme:light;
     }
-    /* Explicit dark — set via data-theme="dark" */
+    /* System dark — used when no ?theme= param */
+    @media(prefers-color-scheme:dark){
+      :root:not([data-theme]){
+        --bg:oklch(0.145 0 0);--fg:oklch(0.985 0 0);--card:oklch(0.205 0 0);
+        --muted:oklch(0.269 0 0);--muted-fg:oklch(0.708 0 0);
+        --border:oklch(1 0 0/10%);--primary:oklch(0.922 0 0);--primary-fg:oklch(0.205 0 0);
+        color-scheme:dark;
+      }
+    }
+    /* Explicit dark — set via ?theme=dark from the app */
     [data-theme="dark"]{
       --bg:oklch(0.145 0 0);--fg:oklch(0.985 0 0);--card:oklch(0.205 0 0);
-      --muted:oklch(0.22 0 0);--muted-fg:oklch(0.708 0 0);
-      --border:oklch(1 0 0/12%);--primary:oklch(0.985 0 0);--primary-fg:oklch(0.145 0 0);
+      --muted:oklch(0.269 0 0);--muted-fg:oklch(0.708 0 0);
+      --border:oklch(1 0 0/10%);--primary:oklch(0.922 0 0);--primary-fg:oklch(0.205 0 0);
       color-scheme:dark;
     }
-    /* Explicit light — set via data-theme="light" */
+    /* Explicit light — set via ?theme=light from the app */
     [data-theme="light"]{
       --bg:oklch(1 0 0);--fg:oklch(0.145 0 0);--card:oklch(1 0 0);
-      --muted:oklch(0.97 0 0);--muted-fg:oklch(0.5 0 0);
-      --border:oklch(0.922 0 0);--primary:oklch(0.145 0 0);--primary-fg:oklch(0.985 0 0);
+      --muted:oklch(0.97 0 0);--muted-fg:oklch(0.556 0 0);
+      --border:oklch(0.922 0 0);--primary:oklch(0.205 0 0);--primary-fg:oklch(0.985 0 0);
       color-scheme:light;
     }
     /* Hide scrollbar — keep native touch scroll intact */
@@ -33,31 +42,11 @@
     *::-webkit-scrollbar{display:none}
 
     *,*::before,*::after{box-sizing:border-box}
-    body{margin:0;padding:48px 20px 80px;background:var(--bg);color:var(--fg);font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:clip;transition:background .2s,color .2s}
+    body{margin:0;padding:48px 20px 80px;background:var(--bg);color:var(--fg);font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:clip}
     main{max-width:720px;margin:0 auto}
-
-    /* Top Navigation Bar: Languages + Theme Switcher */
-    .top-bar{display:flex;align-items:center;justify-content:space-between;margin-bottom:40px;flex-wrap:wrap;gap:12px}
-    .lang-bar{display:flex;gap:8px;flex-wrap:wrap}
-    .lang-btn, .theme-btn{
-      padding:8px 16px;
-      border-radius:999px;
-      border:1px solid var(--border);
-      background:transparent;
-      color:var(--muted-fg);
-      font-family:inherit;
-      font-size:.875rem;
-      font-weight:600;
-      cursor:pointer;
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      transition:background .15s,color .15s,border-color .15s;
-    }
+    .lang-bar{display:flex;gap:8px;margin-bottom:40px;flex-wrap:wrap}
+    .lang-btn{padding:8px 18px;border-radius:999px;border:1px solid var(--border);background:transparent;color:var(--muted-fg);font-family:inherit;font-size:.875rem;font-weight:600;cursor:pointer;transition:background .15s,color .15s,border-color .15s}
     .lang-btn.active{background:var(--primary);color:var(--primary-fg);border-color:var(--primary)}
-    .lang-btn:hover:not(.active), .theme-btn:hover{color:var(--fg);border-color:var(--fg)}
-    .theme-icon{width:16px;height:16px;display:inline-block;vertical-align:middle}
-
     .lang-section{display:none}.lang-section.active{display:block}
     h1{font-size:clamp(1.9rem,6vw,3rem);font-weight:800;letter-spacing:-.04em;margin:0 0 6px;line-height:1.05;color:var(--fg)}
     .updated{font-size:.78rem;color:var(--muted-fg);margin-bottom:48px;opacity:.7;display:block}
@@ -102,16 +91,10 @@
 </head>
 <body>
 <main>
-  <div class="top-bar">
-    <div class="lang-bar">
-      <button class="lang-btn active" onclick="setLang('tr')">Türkçe</button>
-      <button class="lang-btn" onclick="setLang('en')">English</button>
-      <button class="lang-btn" onclick="setLang('de')">Deutsch</button>
-    </div>
-    <button class="theme-btn" id="theme-btn" onclick="toggleTheme()" aria-label="Temayı Değiştir">
-      <span id="theme-icon">🌙</span>
-      <span id="theme-text">Koyu</span>
-    </button>
+  <div class="lang-bar">
+    <button class="lang-btn active" onclick="setLang('tr')">Türkçe</button>
+    <button class="lang-btn" onclick="setLang('en')">English</button>
+    <button class="lang-btn" onclick="setLang('de')">Deutsch</button>
   </div>
 
   <!-- ══════════════ TÜRKÇE ══════════════ -->
@@ -213,57 +196,19 @@
 
 <script>
   (function(){
-    var currentLang = 'tr';
-    var currentTheme = 'light';
-
-    var themeTexts = {
-      tr: { dark: 'Koyu', light: 'Açık' },
-      en: { dark: 'Dark', light: 'Light' },
-      de: { dark: 'Dunkel', light: 'Hell' }
-    };
-
-    // ── Theme Determination ──
     var params = new URLSearchParams(location.search);
-    var urlTheme = params.get('theme');
-    var savedTheme = localStorage.getItem('cevher_theme');
-    var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-    if (urlTheme === 'dark' || urlTheme === 'light') {
-      currentTheme = urlTheme;
-    } else if (savedTheme === 'dark' || savedTheme === 'light') {
-      currentTheme = savedTheme;
-    } else {
-      currentTheme = prefersDark ? 'dark' : 'light';
+    // ── Theme (Uygulamanın ?theme=dark / ?theme=light parametresine göre belirlenir) ──
+    var t = params.get('theme');
+    if (t === 'dark' || t === 'light') {
+      document.documentElement.setAttribute('data-theme', t);
     }
-
-    function applyTheme(theme) {
-      currentTheme = theme;
-      document.documentElement.setAttribute('data-theme', theme);
-      var icon = document.getElementById('theme-icon');
-      var text = document.getElementById('theme-text');
-      if (icon && text) {
-        icon.textContent = theme === 'dark' ? '☀️' : '🌙';
-        text.textContent = theme === 'dark' 
-          ? (themeTexts[currentLang]?.light || 'Light')
-          : (themeTexts[currentLang]?.dark || 'Dark');
-      }
-    }
-
-    function toggleTheme() {
-      var nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      localStorage.setItem('cevher_theme', nextTheme);
-      applyTheme(nextTheme);
-    }
-    window.toggleTheme = toggleTheme;
-
-    // ── Language Determination ──
+    // ── Language (?lang=tr / ?lang=en / ?lang=de) ──
     var supported = ['tr', 'en', 'de'];
     var raw = params.get('lang') || navigator.language || 'tr';
     var lang = raw.slice(0, 2).toLowerCase();
     if (!supported.includes(lang)) lang = 'tr';
 
-    function setLang(l) {
-      currentLang = l;
+    function setLang(l){
       document.querySelectorAll('.lang-section').forEach(function(s){ s.classList.remove('active'); });
       document.querySelectorAll('.lang-btn').forEach(function(b){ b.classList.remove('active'); });
       var sec = document.getElementById('lang-' + l);
@@ -271,13 +216,9 @@
       var btn = document.querySelector('[onclick="setLang(\'' + l + '\')"]');
       if (btn) btn.classList.add('active');
       document.documentElement.lang = l;
-      applyTheme(currentTheme);
     }
-    window.setLang = setLang;
-
-    // Initialize
     setLang(lang);
-    applyTheme(currentTheme);
+    window.setLang = setLang;
   })();
 </script>
 </body>
