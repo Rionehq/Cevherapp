@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Cevher — Destek & Yardım Merkezi / Support / Hilfe-Center</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    :root{
+      --bg:oklch(1 0 0);--fg:oklch(0.145 0 0);--card:oklch(1 0 0);
+      --muted:oklch(0.97 0 0);--muted-fg:oklch(0.556 0 0);
+      --border:oklch(0.922 0 0);--primary:oklch(0.205 0 0);--primary-fg:oklch(0.985 0 0);
+      --accent:oklch(0.55 0.18 145);--radius:.75rem;color-scheme:light;
+    }
+    /* System dark — used when no ?theme= param */
+    @media(prefers-color-scheme:dark){
+      :root:not([data-theme]){
+        --bg:oklch(0.145 0 0);--fg:oklch(0.985 0 0);--card:oklch(0.205 0 0);
+        --muted:oklch(0.22 0 0);--muted-fg:oklch(0.708 0 0);
+        --border:oklch(1 0 0/10%);--primary:oklch(0.922 0 0);--primary-fg:oklch(0.205 0 0);
+        color-scheme:dark;
+      }
+    }
+    /* Explicit dark — set via ?theme=dark from the app */
+    [data-theme="dark"]{
+      --bg:oklch(0.145 0 0);--fg:oklch(0.985 0 0);--card:oklch(0.205 0 0);
+      --muted:oklch(0.22 0 0);--muted-fg:oklch(0.708 0 0);
+      --border:oklch(1 0 0/10%);--primary:oklch(0.922 0 0);--primary-fg:oklch(0.205 0 0);
+      color-scheme:dark;
+    }
+    /* Explicit light — set via ?theme=light from the app */
+    [data-theme="light"]{
+      --bg:oklch(1 0 0);--fg:oklch(0.145 0 0);--card:oklch(1 0 0);
+      --muted:oklch(0.97 0 0);--muted-fg:oklch(0.556 0 0);
+      --border:oklch(0.922 0 0);--primary:oklch(0.205 0 0);--primary-fg:oklch(0.985 0 0);
+      color-scheme:light;
+    }
+    /* Hide scrollbar — keep native touch scroll intact */
+    *{scrollbar-width:none;-ms-overflow-style:none}
+    *::-webkit-scrollbar{display:none}
+
+    *,*::before,*::after{box-sizing:border-box}
+    body{margin:0;padding:48px 20px 80px;background:var(--bg);color:var(--fg);font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:clip}
+    main{max-width:720px;margin:0 auto}
+    .lang-bar{display:flex;gap:8px;margin-bottom:40px;flex-wrap:wrap}
+    .lang-btn{padding:8px 18px;border-radius:999px;border:1px solid var(--border);background:transparent;color:var(--muted-fg);font-family:inherit;font-size:.875rem;font-weight:600;cursor:pointer;transition:background .15s,color .15s,border-color .15s}
+    .lang-btn.active{background:var(--primary);color:var(--primary-fg);border-color:var(--primary)}
+    .lang-section{display:none}.lang-section.active{display:block}
+    .wordmark{display:block;font-size:.95rem;font-weight:800;letter-spacing:-.03em;color:var(--fg);margin-bottom:10px}
+    h1{font-size:clamp(1.9rem,6vw,3rem);font-weight:800;letter-spacing:-.04em;margin:0 0 6px;line-height:1.05;color:var(--fg)}
+    .subtitle{font-size:1.05rem;color:var(--muted-fg);margin:0 0 32px;line-height:1.6}
+    
+    /* Support Contact Card (Fintech standard) */
+    .support-card{
+      background:var(--muted);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:24px;
+      margin-bottom:40px;
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+    }
+    .support-card-header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+    .support-title{font-size:1.15rem;font-weight:700;color:var(--fg);margin:0}
+    .online-indicator{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:600;color:oklch(0.65 0.18 145)}
+    .online-dot{width:8px;height:8px;border-radius:50%;background:currentColor}
+    .support-mail-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      background:var(--primary);
+      color:var(--primary-fg);
+      text-decoration:none;
+      font-size:.95rem;
+      font-weight:700;
+      padding:14px 24px;
+      border-radius:999px;
+      transition:opacity .15s,transform .15s;
+      width:fit-content;
+    }
+    .support-mail-btn:hover{opacity:.9}
+    .support-mail-btn:active{transform:scale(.98)}
+    .support-meta{font-size:.85rem;color:var(--muted-fg);margin:0;line-height:1.5}
+
+    h2{font-size:1.15rem;font-weight:800;letter-spacing:-.02em;color:var(--fg);margin:44px 0 16px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+    .faq-item{margin-bottom:20px}
+    .faq-q{font-size:1rem;font-weight:700;color:var(--fg);margin:0 0 6px}
+    .faq-a{color:var(--muted-fg);font-size:.95rem;line-height:1.68;margin:0}
+    
+    p,li{color:var(--muted-fg);font-size:1rem;line-height:1.72;margin:0 0 12px}
+    ul{padding-left:1.4em;margin:8px 0 16px}li{margin-bottom:6px}
+    strong{color:var(--fg);font-weight:700}a{color:var(--fg);text-underline-offset:3px}
+    
+    .badge{display:inline-block;padding:4px 12px;border-radius:999px;background:var(--muted);border:1px solid var(--border);font-size:.78rem;color:var(--muted-fg);font-weight:600;margin-right:6px;margin-bottom:6px}
+    .badge-row{margin-bottom:20px}
+    footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--border);font-size:.78rem;color:var(--muted-fg);opacity:.75}
+    footer a{color:var(--muted-fg)}
+  </style>
+</head>
+<body>
+<main>
+  <div class="lang-bar">
+    <button class="lang-btn active" onclick="setLang('tr')">Türkçe</button>
+    <button class="lang-btn" onclick="setLang('en')">English</button>
+    <button class="lang-btn" onclick="setLang('de')">Deutsch</button>
+  </div>
+
+  <!-- ══════════════ TÜRKÇE ══════════════ -->
+  <section class="lang-section active" id="lang-tr">
+    <span class="wordmark">CEVHER</span>
+    <h1>Destek & Yardım Merkezi</h1>
+    <p class="subtitle">Cevher deneyiminizle ilgili sorularınız, geri bildirimleriniz ve teknik destek talepleriniz için buradayız.</p>
+
+    <!-- Support Card -->
+    <div class="support-card">
+      <div class="support-card-header">
+        <h3 class="support-title">Doğrudan İletişim</h3>
+        <span class="online-indicator"><span class="online-dot"></span> Aktif Destek Ekibi</span>
+      </div>
+      <p class="support-meta">Teknik arıza, hesap yönetimi veya özellik talepleriniz için bize e-posta yoluyla 7/24 ulaşabilirsiniz. Destek ekibimiz taleplerinize en geç <strong>24 saat</strong> içinde dönüş sağlar.</p>
+      <a href="mailto:help@cevher.app" class="support-mail-btn">help@cevher.app ile İletişime Geçin</a>
+    </div>
+
+    <div class="badge-row">
+      <span class="badge">iOS 16.1+ Desteği</span>
+      <span class="badge">Sıfır Komisyon / Para Tutulmaz</span>
+      <span class="badge">SOC 2 Type II Güvenli Bulut</span>
+      <span class="badge">Uçtan Uca Şifreleme</span>
+    </div>
+
+    <h2>Sıkça Sorulan Sorular (SSS)</h2>
+
+    <div class="faq-item">
+      <p class="faq-q">1. Cevher bir borsa veya aracı kurum mudur?</p>
+      <p class="faq-a">Hayır. Cevher yalnızca hisse senedi, altın, döviz, emtia ve kripto para yatırımlarınızı takip etmenizi sağlayan <strong>bağımsız bir portföy takip ve analiz uygulamasıdır</strong>. Uygulama içinde para yatırma/çekme yapılmaz, gerçek emir iletilmez ve yatırım tavsiyesi verilmez.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">2. Hesabımı ve tüm verilerimi nasıl silebilirim?</p>
+      <p class="faq-a">Uygulama içerisinden <strong>Ayarlar &gt; Hesap &gt; Hesabımı Sil</strong> adımlarını takip ederek hesabınızı, tüm portföy geçmişinizi, alarmlarınızı ve bildirim kayıtlarınızı anında ve kalıcı olarak silebilirsiniz. Ayrıca <a href="mailto:help@cevher.app">help@cevher.app</a> adresine e-posta göndererek de hesap silme talebinde bulunabilirsiniz.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">3. Fiyat alarmları ve bildirimler neden iletilmiyor?</p>
+      <p class="faq-a">Cihazınızın <em>Ayarlar &gt; Bildirimler &gt; Cevher</em> menüsünden bildirim izinlerinin açık olduğundan emin olun. Ayrıca iOS'ta "Düşük Güç Modu" veya "Odak / Rahatsız Etmeyin" modlarının anlık bildirimleri sessize almadığını kontrol edin.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">4. Verilerim nerede ve nasıl korunuyor?</p>
+      <p class="faq-a">Tüm verileriniz Avrupa Birliği (Frankfurt, Almanya) bölgesinde yer alan, SOC 2 Type II sertifikalı Supabase sunucularında Satır Düzeyi Güvenlik (RLS) ile korunur. Verileriniz asla üçüncü taraflara satılmaz veya reklam hedeflemesi amacıyla kullanılmaz.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">5. Bir hata ile karşılaştım, ne yapmalıyım?</p>
+      <p class="faq-a">Lütfen hatanın ekran görüntüsünü, cihaz modelinizi ve iOS sürümünüzü <a href="mailto:help@cevher.app">help@cevher.app</a> adresine iletin. Teknik ekibimiz sorunu en kısa sürede inceleyecektir.</p>
+    </div>
+
+    <h2>Yasal & Şartlar</h2>
+    <p>Gizlilik ilkelerimiz ve kullanım sözleşmemiz hakkında daha fazla bilgiye aşağıdaki bağlantılardan ulaşabilirsiniz:</p>
+    <ul>
+      <li><a href="https://cevher.app/privacy/">Gizlilik Politikası (Privacy Policy)</a></li>
+      <li><a href="https://cevher.app/terms/">Kullanım Koşulları (Terms of Service)</a></li>
+      <li><a href="https://cevher.app/disclaimer/">Sorumluluk Reddi (Disclaimer)</a></li>
+    </ul>
+
+    <footer>
+      <p>© 2026 Cevher. Tüm hakları saklıdır. Destek: <a href="mailto:help@cevher.app">help@cevher.app</a></p>
+    </footer>
+  </section>
+
+  <!-- ══════════════ ENGLISH ══════════════ -->
+  <section class="lang-section" id="lang-en">
+    <span class="wordmark">CEVHER</span>
+    <h1>Support & Help Center</h1>
+    <p class="subtitle">We are here to assist you with any questions, feedback, or technical support regarding Cevher.</p>
+
+    <!-- Support Card -->
+    <div class="support-card">
+      <div class="support-card-header">
+        <h3 class="support-title">Direct Support</h3>
+        <span class="online-indicator"><span class="online-dot"></span> Active Support Team</span>
+      </div>
+      <p class="support-meta">Reach out to us 24/7 for technical inquiries, account management, or feature requests. Our dedicated support team responds within <strong>24 hours</strong>.</p>
+      <a href="mailto:help@cevher.app" class="support-mail-btn">Contact help@cevher.app</a>
+    </div>
+
+    <div class="badge-row">
+      <span class="badge">iOS 16.1+ Ready</span>
+      <span class="badge">No Brokerage / Zero Custody</span>
+      <span class="badge">SOC 2 Type II Certified Cloud</span>
+      <span class="badge">End-to-End Encryption</span>
+    </div>
+
+    <h2>Frequently Asked Questions (FAQ)</h2>
+
+    <div class="faq-item">
+      <p class="faq-q">1. Is Cevher a brokerage or financial exchange?</p>
+      <p class="faq-a">No. Cevher is an <strong>independent personal portfolio tracking and analytics tool</strong>. No money is held, deposited, or transferred within the app, and no financial advice is provided.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">2. How can I delete my account and data?</p>
+      <p class="faq-a">You can permanently delete your account, portfolio entries, alerts, and push registrations at any time by navigating to <strong>Settings &gt; Account &gt; Delete Account</strong> in the app, or by emailing <a href="mailto:help@cevher.app">help@cevher.app</a>.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">3. Why am I not receiving price notifications?</p>
+      <p class="faq-a">Please verify that notifications are enabled under your device's <em>Settings &gt; Notifications &gt; Cevher</em>. Also ensure that Low Power Mode or Focus/Do Not Disturb filters are not silencing alerts.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">4. Where is my data hosted and how is it secured?</p>
+      <p class="faq-a">Your data is stored in the EU region (Frankfurt, Germany) on SOC 2 Type II certified Supabase infrastructure with Row-Level Security (RLS) enforcement. Your data is strictly private and never sold or shared.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">5. How do I report a bug or request a feature?</p>
+      <p class="faq-a">Send an email to <a href="mailto:help@cevher.app">help@cevher.app</a> with a description, screenshots, and your device/OS version. Our engineering team will review it promptly.</p>
+    </div>
+
+    <h2>Legal & Compliance</h2>
+    <p>Read our full terms and policies:</p>
+    <ul>
+      <li><a href="https://cevher.app/privacy/">Privacy Policy</a></li>
+      <li><a href="https://cevher.app/terms/">Terms of Service</a></li>
+      <li><a href="https://cevher.app/disclaimer/">Financial Disclaimer</a></li>
+    </ul>
+
+    <footer>
+      <p>© 2026 Cevher. All rights reserved. Support: <a href="mailto:help@cevher.app">help@cevher.app</a></p>
+    </footer>
+  </section>
+
+  <!-- ══════════════ DEUTSCH ══════════════ -->
+  <section class="lang-section" id="lang-de">
+    <span class="wordmark">CEVHER</span>
+    <h1>Hilfe- & Support-Center</h1>
+    <p class="subtitle">Wir stehen Ihnen bei allen Fragen, Rückmeldungen und Supportanliegen rund um Cevher gerne zur Verfügung.</p>
+
+    <!-- Support Card -->
+    <div class="support-card">
+      <div class="support-card-header">
+        <h3 class="support-title">Direkter Kontakt</h3>
+        <span class="online-indicator"><span class="online-dot"></span> Aktives Support-Team</span>
+      </div>
+      <p class="support-meta">Kontaktieren Sie uns rund um die Uhr per E-Mail für technische Hilfe, Kontoverwaltung oder Feedback. Unser Team antwortet in der Regel innerhalb von <strong>24 Stunden</strong>.</p>
+      <a href="mailto:help@cevher.app" class="support-mail-btn">E-Mail an help@cevher.app</a>
+    </div>
+
+    <div class="badge-row">
+      <span class="badge">iOS 16.1+ Kompatibel</span>
+      <span class="badge">Keine Brokerage / Keine Verwahrung</span>
+      <span class="badge">SOC 2 Typ II Zertifiziert</span>
+      <span class="badge">TLS-Verschlüsselung</span>
+    </div>
+
+    <h2>Häufig gestellte Fragen (FAQ)</h2>
+
+    <div class="faq-item">
+      <p class="faq-q">1. Ist Cevher ein Broker oder eine Börse?</p>
+      <p class="faq-a">Nein. Cevher ist ein <strong>unabhängiges Tool zur persönlichen Portfolio-Verfolgung und -Analyse</strong>. In der App werden keine Gelder verwahrt oder Transaktionen abgewickelt.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">2. Wie kann ich mein Konto und alle Daten löschen?</p>
+      <p class="faq-a">Navigieren Sie in der App zu <strong>Einstellungen &gt; Konto &gt; Konto löschen</strong>, um alle Ihre Portfolio-Einträge und Daten dauerhaft zu entfernen. Alternativ genügt eine E-Mail an <a href="mailto:help@cevher.app">help@cevher.app</a>.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">3. Wo werden meine Daten gespeichert?</p>
+      <p class="faq-a">Alle Daten werden in der EU-Region (Frankfurt am Main, Deutschland) auf SOC 2 Typ II zertifizierten Supabase-Servern mit Row-Level Security (RLS) gespeichert.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">4. Wie melde ich einen Fehler?</p>
+      <p class="faq-a">Senden Sie uns bitte eine Beschreibung sowie Bildschirmfotos an <a href="mailto:help@cevher.app">help@cevher.app</a>. Wir kümmern uns umgehend darum.</p>
+    </div>
+
+    <h2>Rechtliches</h2>
+    <ul>
+      <li><a href="https://cevher.app/privacy/">Datenschutzerklärung</a></li>
+      <li><a href="https://cevher.app/terms/">Nutzungsbedingungen</a></li>
+      <li><a href="https://cevher.app/disclaimer/">Haftungsausschluss</a></li>
+    </ul>
+
+    <footer>
+      <p>© 2026 Cevher. Alle Rechte vorbehalten. Support: <a href="mailto:help@cevher.app">help@cevher.app</a></p>
+    </footer>
+  </section>
+</main>
+
+<script>
+  (function(){
+    var params=new URLSearchParams(location.search);
+    // ── Theme (Supports ?theme=dark / ?theme=light) ──
+    var t=params.get('theme');
+    if(t==='dark'||t==='light') document.documentElement.setAttribute('data-theme',t);
+    // ── Language (Supports ?lang=tr / ?lang=en / ?lang=de) ──
+    var supported=['tr','en','de'];
+    var raw=params.get('lang')||navigator.language||'tr';
+    var lang=raw.slice(0,2).toLowerCase();
+    if(!supported.includes(lang)) lang='tr';
+    function setLang(l){
+      document.querySelectorAll('.lang-section').forEach(function(s){s.classList.remove('active')});
+      document.querySelectorAll('.lang-btn').forEach(function(b){b.classList.remove('active')});
+      document.getElementById('lang-'+l).classList.add('active');
+      var btn=document.querySelector('[onclick="setLang(\''+l+'\')"]');
+      if(btn) btn.classList.add('active');
+      document.documentElement.lang=l;
+    }
+    setLang(lang);
+    window.setLang=setLang;
+  })();
+</script>
+</body>
+</html>
